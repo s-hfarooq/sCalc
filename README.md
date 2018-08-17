@@ -15,7 +15,7 @@ Download repo, run `npm install electron` if needed (probably not) then run usin
 
 # Current look
 
-<img src="Images/screenshot.png" alt="screenshot" height="450"><br>
+<img src="Images/screenshot-V1.png" alt="screenshot" height="450"><br>
 
 
 Currently very basic - needs a lot of work

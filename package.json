@@ -7,6 +7,6 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Hassan Farooq, Github: s-hfarooq, email: 1hassanfarooq@gmail.com, 2018",
   "license": "ISC"
 }
