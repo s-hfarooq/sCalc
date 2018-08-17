@@ -2,18 +2,37 @@
   <head>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- scripts for line numbers -->
+    <script src="lineNums/jquery.min.js"></script>
+    <script src="lineNums/jquery-linedtextarea.js"></script>
+	  <link href="lineNums/jquery-linedtextarea.css" type="text/css" rel="stylesheet" />
   </head>
 
   <body>
-    <div class="container">
-      <h1>sCalc</h1>
+    <div class="split left">
+      <div class="container" >
+        <div class="form-group" id="mainInputBox">
+          <textarea class="lined" rows="50" cols="60"></textarea>
 
-      <div class="form-group">
-        <label for=" Email1msg">Type here:</label>
-        <textarea class="form-control" rows="5"></textarea>
+          <script>
+          $(function() {
+          	$(".lined").linedtextarea(
+          		{selectedLine: 1}
+          	);
+          });
+          </script>
+        </div>
+
+        <div id="submitButton">
+          <button type="submit" class="btn btn-info">Submit</button>
+        </div>
       </div>
-
-      <button type="submit" class="btn btn-info">Submit Information</button>
     </div>
+
+    <div class="split right">
+      <h1><center>RIGHT SIDE</center></h1>
+    </div>
+
   </body>
 </html>
