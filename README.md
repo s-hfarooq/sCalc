@@ -10,7 +10,7 @@ Specific syntax (ie. graph y=x^2 would show a graph to the right of y=x^2, while
 
 
 # Running it
-Download repo, run `npm install electron` if needed (probably not) then run using `npm start`. Executable applications for Windows, MacOS, and Linux will eventually exist.
+Download repo, move into `src`, run `npm install electron` if needed (probably not) then run using `npm start`. Executable applications for Windows, MacOS, and Linux will eventually exist.
 
 
 # Current look
