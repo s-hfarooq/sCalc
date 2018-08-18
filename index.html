@@ -22,34 +22,34 @@
 <body>
   <div id="container" class="container-fluid">
 
-    <!-- Input row -->
-    <div class="split left">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        <h3 class="hash-heading">Input</h3>
-        <textarea id="text-input" class="form-control text-input" style="overflow:hidden" placeholder="Enter text and see the results..."></textarea>
+  <!-- Input row -->
+  <div class="split left">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+      <h3 class="hash-heading">Input</h3>
+      <textarea id="text-input" class="form-control text-input" placeholder="Enter text and see the results..."></textarea>
 
-        <!-- Script handling auto resize of input box -->
-        <script>
-          var textarea = document.getElementById("text-input");
-          var heightLimit = 2000000;
+      <!-- Script handling auto resize of input box -->
+      <script>
+        var textarea = document.getElementById("text-input");
 
-          textarea.oninput = function() {
-            textarea.style.height = "";
-            textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
-          };
-        </script>
-      </div>
+        textarea.oninput = function() {
+          textarea.style.height = "";
+          textarea.style.height = Math.min(textarea.scrollHeight) + "px";
+        };
+      </script>
     </div>
-
-    <!-- Output row -->
-    <div class="split right">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h3 class="hash-heading">Output</h3>
-        <pre id="usrOutput" class="hash-output"> </pre>
-      </div>
-    </div>
-
   </div>
+
+  <!-- Output row -->
+  <div class="split right">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h3 class="hash-heading">Output</h3>
+      <pre id="usrOutput" class="hash-output"> </pre>
+    </div>
+  </div>
+
+</div>
+
 </body>
 
 </html>
