@@ -4,7 +4,7 @@
 ## Information
 Similar to [NaSC](https://github.com/parnold-x/nasc)
 
-Electron application - cross platform
+[Electron](https://github.com/electron/electron) application - cross platform
 
 Specific syntax (ie. graph y=x^2 would show a graph to the right of y=x^2, while zeros y=x^2 would output the zeros) eventually
 
