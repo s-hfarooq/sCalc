@@ -24,11 +24,9 @@ Change the css - differnt theme (eventually a theme selector?)
 
 
 # Order of things to be completed
-1. GUI - make it look decent and somehow get input from user and display some result
+1. GUI - make it look decent and somehow get input from user and display some result - also needs line numbers on input/output
 2. Simple calculator (+, -, *, /, etc.)
-3. Graph equations - interactive like Desmos?
+3. Graph equations - interactive like Desmos? - basic graph in program with link to Desmos below
 4. Improvements on math commands
-5. Improvements on GUI/tweaking small things - diffrent text color/highlights for different "objects"
+5. Improvements on GUI/tweaking small things - different text color/highlights for different "objects", theming options, etc.
 6. Move onto other subjects (physics, chemistry, etc.)
-
-Use Wolfram Alpa or Desmos?
