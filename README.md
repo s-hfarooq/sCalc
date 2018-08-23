@@ -12,10 +12,22 @@ Specific syntax (ie. graph y=x^2 would show a graph to the right of y=x^2, while
 # Running it
 Download repo, move into `src`, run `npm install electron` if needed (probably not) then run using `npm start`. Executable applications for Windows, MacOS, and Linux will eventually exist.
 
+You can also download the release build for your system located within `release-builds`. Just note that these versions are untested, and therefore may not work properly.  
+
+
+# Using it
+Currently only supports one command - `math (your input)`
+A space must be present between `math` and `(` for the program to work properly (will be fixed eventually)
+
+Supports basic arithmetic, along with unit conversion and other basic tasks. Uses `math.js`, so anything that can accomplish can also probably be done here.
+
+Also, the math command can only currently be done on the first line - this will eventually be fixed.
+
+If the program doesn't understand a command it mirrors whatever you've typed.
 
 # Current look
 
-<img src="Screenshots/screenshot-V4.png" alt="screenshot" height="450"><br>
+<img src="Screenshots/screenshot-V5.png" alt="screenshot" height="450"><br>
 
 
 Currently very basic - needs a lot of work
