@@ -27,7 +27,7 @@ If the program doesn't understand a command it mirrors whatever you've typed.
 
 # Current look
 
-<img src="Screenshots/screenshot-V5.png" alt="screenshot" height="450"><br>
+<img src="screenshots/screenshot-V5.png" alt="screenshot" height="450"><br>
 
 
 Currently very basic - needs a lot of work
