@@ -36,7 +36,7 @@ Change the css - differnt theme (eventually a theme selector?)
 
 
 # Order of things to be completed
-1. GUI - make it look decent and somehow get input from user and display some result - also needs line numbers on input/output
+1. GUI - make it look better - also needs line numbers on input/output
 2. Simple calculator (+, -, *, /, etc.)
 3. Graph equations - interactive like Desmos? - basic graph in program with link to Desmos below
 4. Improvements on math commands
