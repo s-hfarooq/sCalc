@@ -31,6 +31,10 @@ $(() => {
       {
         finalAns = "Graphing unavailable.";
       }
+      else if (firstWord == "parse")
+      {
+        finalAns = "Parsing unavailable.";
+      }
       else
       {
         finalAns = stringArray[i];
