@@ -19,6 +19,9 @@ app.once('ready', () => {
     show: false
   })
 
+  //Comment this line out if menubar needed - also disables certain key shortcuts
+  window.setMenu(null);
+
   // Load a URL in the window to the local index.html path
   window.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
@@ -30,4 +33,5 @@ app.once('ready', () => {
   window.once('ready-to-show', () => {
     window.show()
   })
+
 })

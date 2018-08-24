@@ -26,14 +26,17 @@ $(() => {
       {
         var result = strArr.match(/\((.*)\)/);
         finalAns = math.eval(result[1]);
+
       }
       else if(firstWord == "graph")
       {
-        finalAns = "Graphing unavailable.";
+        finalAns = "See Below:";
+        var eqGraph = strArr.match(/\((.*)\)/);
+        draw(eqGraph[1]);
       }
       else if (firstWord == "parse")
       {
-        finalAns = "Parsing unavailable.";
+        finalAns = "Parsing unavailable in this version.";
       }
       else
       {
@@ -47,6 +50,35 @@ $(() => {
     var finalText2 = finalText.toString().split(",").join("\n");
     $('#usrOutput').text(finalText2);
   })
+
+
+  function draw(inputVal) {
+    try {
+      // compile the expression once
+      const expression = inputVal
+      const expr = math.compile(expression)
+
+      // evaluate the expression repeatedly for different values of x
+      const xValues = math.range(-10, 10, 0.5).toArray()
+      const yValues = xValues.map(function (x) {
+        return expr.eval({x: x})
+      })
+
+      // render the plot using plotly
+      const trace1 = {
+        x: xValues,
+        y: yValues,
+        type: 'scatter'
+      }
+      const data = [trace1]
+      Plotly.newPlot('plot', data)
+    }
+    catch (err) {
+      console.error(err)
+      alert(err)
+    }
+  }
+
 
   $('#text-input').focus() // focus input box
 })

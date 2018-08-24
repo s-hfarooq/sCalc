@@ -28,12 +28,13 @@ If the program doesn't understand a command it mirrors whatever you've typed.
 
 #### Graph command
 `Keyword: graph`
+`graph (2x+1, 0, 5)`
 
 Currently not supported, may come in the future - will display a interactive graph of a given equation.
 
 ## Current look
 
-<img src="screenshots/screenshot-V5.png" alt="screenshot" height="450"><br>
+<img src="screenshots/screenshot-V6.png" alt="screenshot" height="450"><br>
 
 
 Currently very basic - needs a lot of work
