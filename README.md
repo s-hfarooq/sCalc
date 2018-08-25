@@ -14,6 +14,8 @@ Download repo, move into the `src` directory, and run using `npm start`. Only te
 
 Alternatively, you can download the release build for your system located within the `release-builds` folder. Just note that these versions are untested and not up to date, and therefore may not work properly and will not have all available features.
 
+To build the lated version yourself, take a look at `compileInfo.md`
+
 If you really want to, you can also open `index.html` within `src` using a browser (only Chrome tested so far) and all functionality should work perfectly fine.
 
 
@@ -42,7 +44,7 @@ Only supports one graph per instance - updates to use equation closest to the bo
 
 Errors also appear if closing parenthesis appears before finishing equation (ie. + without a following digit/variable, incorrect amount of closing parenthesis, etc.)
 
-## Current look
+## Preview
 
 <img src="screenshots/screenshot-V6.png" alt="screenshot" height="450"><br>
 
