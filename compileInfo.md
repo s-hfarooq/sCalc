@@ -1,5 +1,5 @@
 # Compiling commands
-Run the commands below while in the `src` directory to compile current code for the system you desire
+Run the commands below while in the `src` directory to compile current code for the desired system
 
 ## Linux
 `electron-packager . sCalc --overwrite --asar=true --platform=linux --arch=x64 --icon=icons/icon.png --prune=true --out=release-builds`

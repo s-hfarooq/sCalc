@@ -2,11 +2,9 @@
 
 
 ## Information
-A robust desktop calculator created with Electron (eventually)
+A robust desktop calculator created with Electron
 
-Similar to [NaSC](https://github.com/parnold-x/nasc)
-
-[Electron](https://github.com/electron/electron) application - cross platform
+Similar to [NaSC](https://github.com/parnold-x/nasc) | [Electron](https://github.com/electron/electron) application - cross platform
 
 
 ## Running it
@@ -14,7 +12,7 @@ Download repo, move into the `src` directory, and run using `npm start`. Only te
 
 Alternatively, you can download the release build for your system located within the `release-builds` folder. Just note that these versions are untested and not up to date, and therefore may not work properly and will not have all available features.
 
-To build the lated version yourself, take a look at `compileInfo.md`
+To build the latest version yourself, take a look at `compileInfo.md`.
 
 If you really want to, you can also open `index.html` within `src` using a browser (only Chrome tested so far) and all functionality should work perfectly fine.
 
@@ -25,19 +23,16 @@ Commands must be entered by in the following fashion: `keyword (command)` where 
 If the program doesn't understand a command, it mirrors whatever you've typed.
 
 #### Math command
-`Keyword: math`
-
-`Example: math (5*5)`
+'Example: math (5*5)`
 
 Allows for input of basic arithmetic (ie. +, -, *, /, etc.), unit conversion (ie. 16kg to lbs), and allows the use of constants (ie. pi, e, etc.).
 
 #### Parse command
-`Keyword: parse`
+`Example: parse(a=10)`
 
 Currently not supported, may come in the future - will bring things such as equations (ie. f(x) = 2x, what is f(2)?), variable support, complex numbers, and more.
 
 #### Graph command
-`Keyword: graph`
 `Example: graph (3x^2)`
 
 Only supports one graph per instance - updates to use equation closest to the bottom of the input. Interactive, but takes up a lot of unnecessary space - needs to be fixed.
