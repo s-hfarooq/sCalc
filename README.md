@@ -12,7 +12,7 @@ Download repo, move into the `src` directory, and run using `npm start`. Only te
 
 Alternatively, you can download the release build for your system located within the `release-builds` folder. Just note that these versions are untested and not up to date, and therefore may not work properly and will not have all available features.
 
-To build the latest version yourself, take a look at `compileInfo.md`.
+To build the latest version yourself, take a look at [`compileInfo.md`](compileInfo.md).
 
 If you really want to, you can also open `index.html` within `src` using a browser (only Chrome tested so far) and all functionality should work perfectly fine.
 
