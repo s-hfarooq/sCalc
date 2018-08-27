@@ -2,7 +2,7 @@ $(() => {
 
   //Takes user input and preforms some functions on it
   $('#text-input').bind('input propertychange', function() {
-    
+
     var testDoc = document.getElementById("text-input").innerHTML;
 
     //Cleans input string
