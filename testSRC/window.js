@@ -2,12 +2,11 @@ $(() => {
 
   //Takes user input and preforms some functions on it
   $('#text-input').bind('input propertychange', function() {
-    testDoc = document.getElementById("text-input").innerHTML;
-    //const text = this.value
+    
+    var testDoc = document.getElementById("text-input").innerHTML;
 
-
-    //testDoc = testDoc.replace(/&nbsp;/gi," ");
-    console.warn("USR INPUT: " + testDoc);
+    //Cleans input string
+    testDoc = testDoc.replace(/&nbsp;/gi," ").replace("<div>", "\n").replace("</div>", "");
 
     var text = testDoc;
     //Mirrors user input into output box
@@ -35,9 +34,10 @@ $(() => {
         finalAns = math.eval(result[1]);
 
         //Set color of text - I don't know why it needs to  be so confusing
-      //  $("div:contains('math')").each(function () {
-      //    $(this).html($(this).html().replace("math", "<span class='mathCol'>math</span>"));
-      //  });
+        //Works, but only for one line then breaks everything else
+        //$("div:contains('math')").each(function () {
+        //  $(this).html($(this).html().replace("math", "<span class='mathCol'>math</span>"));
+        //});
 
       }
       else if(firstWord == "graph")
@@ -67,13 +67,13 @@ $(() => {
     }
 
     //Takes finalText array, converts to string, then splits each element into a newline
-    //var finalText2 = finalText.toString().split(",").join("\n");
-    finalText2 = finalText.toString();
+    var finalText2 = finalText.toString().split(",").join("\n");
+
     document.getElementById('usrOutput').innerHTML = finalText2;
-    //$('#usrOutput').text(finalText2);
   })
 
 
+  //Function for creating graphs
   function draw(inputVal) {
     try {
       // compile the expression once
