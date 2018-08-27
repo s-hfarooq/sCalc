@@ -6,7 +6,6 @@ $(() => {
     //Mirrors user input into output box
     $('#usrOutput').text(text)
 
-
     //Takes input and splits it by newline - each line can have it's own command
     var inputStr = text;
     var stringArray = inputStr.split(/\r?\n/);
@@ -30,7 +29,7 @@ $(() => {
       }
       else if(firstWord == "graph")
       {
-        finalAns = "See Below:";
+        finalAns = "See below: ";
         var eqGraph = strArr.match(/\((.*)\)/);
         draw(eqGraph[1]);
       }

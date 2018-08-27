@@ -1,0 +1,79 @@
+html, body, .container-fluid {
+  background-color: #D6D8DC;
+}
+
+.text-input {
+  font-size: 16px;
+}
+
+.hash-output {
+  color: #575B5E;
+  font-size: 16px;
+  letter-spacing: 2px;
+  white-space: pre-wrap;
+}
+
+.hash-heading {
+  color: #575B5E;
+  font-weight: normal;
+}
+
+textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+#container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.split {
+  width: 50%;
+  padding-top: 20px;
+}
+
+.left {
+  background-color: white;
+}
+
+.right {
+  background-color: #E0E0E0;
+}
+
+html, body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* Scrollbar theme */
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+
+.mathCol{
+    color: red;
+}
+
+.graphCol{
+  color: blue;
+}
+
+.parseCol{
+  color: green;
+}
