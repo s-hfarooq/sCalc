@@ -43,7 +43,7 @@ $(() => {
         finalAns = stringArray[i];
       }
 
-      finalText[i] = finalAns;
+      finalText[i] = (i + 1) + ": " + finalAns;
     }
 
     //Takes finalText array, converts to string, then splits each element into a newline
