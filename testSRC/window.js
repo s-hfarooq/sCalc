@@ -42,7 +42,9 @@ $(() => {
       }
       else if(firstWord == "graph")
       {
-        finalAns = "See below: ";
+        //finalAns = "See below: ";
+        g = document.createElement("div");
+        g.setAttribute("graph", "Div1");
         var eqGraph = strArr.match(/\((.*)\)/);
         draw(eqGraph[1]);
 
