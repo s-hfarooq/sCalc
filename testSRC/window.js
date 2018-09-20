@@ -3,19 +3,11 @@ $(() => {
   //Takes user input and preforms some functions on it
   $('#text-input').bind('input propertychange', function() {
 
-    var testDoc = document.getElementById("text-input").innerHTML;
-
-    //Cleans input string
-    testDoc = testDoc.replace(/&nbsp;/gi," ").replace("<div>", "\n").replace("</div>", "");
-
-    var text = testDoc;
-    //Mirrors user input into output box
-    $('#usrOutput').text(text)
-
+    var text = document.getElementById("text-input").innerHTML;
 
     //Takes input and splits it by newline - each line can have it's own command
     var inputStr = text;
-    var stringArray = inputStr.split(/\r?\n/);
+    var stringArray = inputStr.split("<div>");
 
     //Array containing full output
     var finalText = new Array();
@@ -38,27 +30,18 @@ $(() => {
         //$("div:contains('math')").each(function () {
         //  $(this).html($(this).html().replace("math", "<span class='mathCol'>math</span>"));
         //});
-
       }
       else if(firstWord == "graph")
       {
         //finalAns = "See below: ";
-        g = document.createElement("div");
-        g.setAttribute("graph", "Div1");
+        //g = document.getElementById("usrOutput").createElement("div");
+        //g.setAttribute("plot", "Div1");
         var eqGraph = strArr.match(/\((.*)\)/);
         draw(eqGraph[1]);
-
-        $("div:contains('graph')").each(function () {
-          $(this).html($(this).html().replace("graph", "<span class='graphCol'>graph</span>"));
-        });
       }
-      else if (firstWord == "parse")
+      else if(firstWord == "parse")
       {
         finalAns = "Parsing unavailable in this version.";
-
-        $("div:contains('parse')").each(function () {
-          $(this).html($(this).html().replace("parse", "<span class='parseCol'>parse</span>"));
-        });
       }
       else
       {
@@ -69,9 +52,8 @@ $(() => {
     }
 
     //Takes finalText array, converts to string, then splits each element into a newline
-    var finalText2 = finalText.toString().split(",").join("\n");
-
-    document.getElementById('usrOutput').innerHTML = finalText2;
+    var finalTextStr = finalText.toString().split(",").join("\n");
+    document.getElementById('usrOutput').innerHTML = finalTextStr;
   })
 
 
