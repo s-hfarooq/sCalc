@@ -8,8 +8,8 @@
     "start": "electron app.js"
   },
   "author": "Hassan Farooq, Github: s-hfarooq, email: 1hassanfarooq@gmail.com, 2018",
-  "license": "ISC",
+  "license": "GNUGPL",
   "devDependencies": {
-    "electron": "^1.4.12"
+    "electron": "^1.8.8"
   }
 }

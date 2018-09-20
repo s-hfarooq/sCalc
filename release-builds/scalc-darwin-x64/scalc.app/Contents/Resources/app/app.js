@@ -20,7 +20,7 @@ app.once('ready', () => {
   })
 
   //Comment this line out if menubar needed - also disables certain key shortcuts
-  window.setMenu(null);
+  //window.setMenu(null);
 
   // Load a URL in the window to the local index.html path
   window.loadURL(url.format({

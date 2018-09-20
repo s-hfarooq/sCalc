@@ -2,14 +2,12 @@ $(() => {
 
   //Takes user input and preforms some functions on it
   $('#text-input').bind('input propertychange', function() {
-    const text = this.value
-    //Mirrors user input into output box
-    $('#usrOutput').text(text)
 
+    var text = document.getElementById("text-input").innerHTML;
 
     //Takes input and splits it by newline - each line can have it's own command
     var inputStr = text;
-    var stringArray = inputStr.split(/\r?\n/);
+    var stringArray = inputStr.split("<div>");
 
     //Array containing full output
     var finalText = new Array();
@@ -27,14 +25,21 @@ $(() => {
         var result = strArr.match(/\((.*)\)/);
         finalAns = math.eval(result[1]);
 
+        //Set color of text - I don't know why it needs to  be so confusing
+        //Works, but only for one line then breaks everything else
+        //$("div:contains('math')").each(function () {
+        //  $(this).html($(this).html().replace("math", "<span class='mathCol'>math</span>"));
+        //});
       }
       else if(firstWord == "graph")
       {
-        finalAns = "See Below:";
+        //finalAns = "See below: ";
+        //g = document.getElementById("usrOutput").createElement("div");
+        //g.setAttribute("plot", "Div1");
         var eqGraph = strArr.match(/\((.*)\)/);
         draw(eqGraph[1]);
       }
-      else if (firstWord == "parse")
+      else if(firstWord == "parse")
       {
         finalAns = "Parsing unavailable in this version.";
       }
@@ -47,11 +52,12 @@ $(() => {
     }
 
     //Takes finalText array, converts to string, then splits each element into a newline
-    var finalText2 = finalText.toString().split(",").join("\n");
-    $('#usrOutput').text(finalText2);
+    var finalTextStr = finalText.toString().split(",").join("\n");
+    document.getElementById('usrOutput').innerHTML = finalTextStr;
   })
 
 
+  //Function for creating graphs
   function draw(inputVal) {
     try {
       // compile the expression once

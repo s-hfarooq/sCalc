@@ -8,9 +8,9 @@ Similar to [NaSC](https://github.com/parnold-x/nasc) | [Electron](https://github
 
 
 ## Running it
-Download repo, move into the `src` directory (`testSRC` if you want a more "beta" version), and run using `npm start`. Only tested using Ubuntu 18.04 so far.
+Download repo, move into the `src` directory (`testSRC` if you want a more "beta" version), install npm dependencies using `npm install --save-dev electron` then run using `npm start`. Only tested using Ubuntu 18.04 so far.
 
-Alternatively, you can download the release build for your system located within the `release-builds` folder. Just note that these versions are untested and not up to date, and therefore may not work properly and will not have all available features.
+Alternatively, you can download the release build for your system located within the `release-builds` folder. Just note that these versions are untested and not up to date, and therefore may not work properly and will not have all available features/fixes.
 
 To build the latest version yourself, take a look at `compileInfo.md`.
 
