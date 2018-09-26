@@ -64,3 +64,16 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+
+
+.mathCol{
+    color: red;
+}
+
+.graphCol{
+  color: blue;
+}
+
+.parseCol{
+  color: green;
+}

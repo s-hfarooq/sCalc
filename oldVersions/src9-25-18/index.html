@@ -24,12 +24,6 @@
   <script src="scripts/math.min.js"></script>
   <script src="scripts/plotly-1.35.2.min.js"></script>
 
-  <script src="codemirror/lib/codemirror.js"></script>
-  <link href="codemirror/lib/codemirror.css" rel="stylesheet"></link>
-  <script src="codemirror/mode/xml/xml.js"></script>
-  <script src="codemirror/addon/edit/closetag.js"></script>
-  <link href="codemirror/theme/dracula.css" rel="stylesheet"></link>
-
 </head>
 
 
@@ -40,27 +34,12 @@
   <div class="split left">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
       <h3 class="hash-heading">Input</h3>
-      <!-- <textarea id="text-input" class="form-control text-input" placeholder="Enter text and see the results..."></textarea> -->
-      <textarea id="text-input"><p>A paragraph</p></textarea>
+      <textarea id="text-input" class="form-control text-input" placeholder="Enter text and see the results..."></textarea>
 
-      <script>
-        var editor = CodeMirror.fromTextArea(document.getElementById('text-input'), {
-          mode: "xml",
-          theme: "dracula",
-          lineNumbers: true,
-          autoCloseTags: true
-        });
-
-        function showCode() {
-          var text = editor.getValue()
-          console.log(text);
-        }
-      </script>
-
-      <input id="clickMe" type="button" value="clickme" onclick="showCode();" />
       <!-- Script handling auto resize of input box -->
       <script>
         var textarea = document.getElementById("text-input");
+
         textarea.oninput = function() {
           textarea.style.height = "";
           textarea.style.height = Math.min(textarea.scrollHeight) + "px";
@@ -73,13 +52,12 @@
   <div class="split right">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <h3 class="hash-heading">Output</h3>
-      <pre id="usrOutput" class="hash-output"> </pre>
+      <pre id="usrOutput" class="hash-output"></pre>
       <div id="plot"></div>
     </div>
   </div>
 
 </div>
-
 </body>
 
 </html>

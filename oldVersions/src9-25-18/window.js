@@ -2,12 +2,9 @@ $(() => {
 
   //Takes user input and preforms some functions on it
   $('#text-input').bind('input propertychange', function() {
-    const text = this.value;
-
-    console.log(text);
+    const text = this.value
     //Mirrors user input into output box
-    $('#usrOutput').text(text);
-
+    $('#usrOutput').text(text)
 
     //Takes input and splits it by newline - each line can have it's own command
     var inputStr = text;
@@ -32,7 +29,7 @@ $(() => {
       }
       else if(firstWord == "graph")
       {
-        finalAns = "See Below:";
+        finalAns = "See below: ";
         var eqGraph = strArr.match(/\((.*)\)/);
         draw(eqGraph[1]);
       }
@@ -45,13 +42,14 @@ $(() => {
         finalAns = stringArray[i];
       }
 
-      finalText[i] = finalAns;
+      finalText[i] = (i + 1) + ": " + finalAns;
     }
 
     //Takes finalText array, converts to string, then splits each element into a newline
     var finalText2 = finalText.toString().split(",").join("\n");
     $('#usrOutput').text(finalText2);
   })
+
 
   function draw(inputVal) {
     try {

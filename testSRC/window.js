@@ -2,57 +2,57 @@ $(() => {
 
   //Takes user input and preforms some functions on it
   $('#text-input').bind('input propertychange', function() {
+    const text = this.value;
 
-    var text = document.getElementById("text-input").innerHTML;
+    console.log(text);
+    //Mirrors user input into output box
+    $('#usrOutput').text(text);
+
 
     //Takes input and splits it by newline - each line can have it's own command
     var inputStr = text;
-    var stringArray = inputStr.split("<div>");
+    var stringArray = inputStr.split(/\r?\n/);
 
     //Array containing full output
     var finalText = new Array();
 
     //Finds commands wanted for each line, gets custom output based what the user wants
-    for(var i = 0; stringArray.length > i; i++) {
+    for(var i = 0; stringArray.length > i; i++){
 
       //Finds first word of line to know what command to use
       const strArr = stringArray[i];
       var firstWord = strArr.replace(/ .*/,'');
 
       //Preforms basic math or graphing - defaults to mirroring user input
-      if(firstWord == "math") {
+      if(firstWord == "math")
+      {
         var result = strArr.match(/\((.*)\)/);
         finalAns = math.eval(result[1]);
 
-        //Set color of text - I don't know why it needs to  be so confusing
-        //Works, but only for one line then breaks everything else
-        //$("div:contains('math')").each(function () {
-        //  $(this).html($(this).html().replace("math", "<span class='mathCol'>math</span>"));
-        //});
       }
-      else if(firstWord == "graph") {
-        //finalAns = "See below: ";
-        //g = document.getElementById("usrOutput").createElement("div");
-        //g.setAttribute("plot", "Div1");
+      else if(firstWord == "graph")
+      {
+        finalAns = "See Below:";
         var eqGraph = strArr.match(/\((.*)\)/);
         draw(eqGraph[1]);
       }
-      else if(firstWord == "parse") {
+      else if (firstWord == "parse")
+      {
         finalAns = "Parsing unavailable in this version.";
-      } else {
+      }
+      else
+      {
         finalAns = stringArray[i];
       }
 
-      finalText[i] = (i + 1) + ": " + finalAns;
+      finalText[i] = finalAns;
     }
 
     //Takes finalText array, converts to string, then splits each element into a newline
-    var finalTextStr = finalText.toString().split(",").join("\n");
-    document.getElementById('usrOutput').innerHTML = finalTextStr;
+    var finalText2 = finalText.toString().split(",").join("\n");
+    $('#usrOutput').text(finalText2);
   })
 
-
-  //Function for creating graphs
   function draw(inputVal) {
     try {
       // compile the expression once
