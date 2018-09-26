@@ -13,15 +13,14 @@ $(() => {
     var finalText = new Array();
 
     //Finds commands wanted for each line, gets custom output based what the user wants
-    for(var i = 0; stringArray.length > i; i++){
+    for(var i = 0; stringArray.length > i; i++) {
 
       //Finds first word of line to know what command to use
       const strArr = stringArray[i];
       var firstWord = strArr.replace(/ .*/,'');
 
       //Preforms basic math or graphing - defaults to mirroring user input
-      if(firstWord == "math")
-      {
+      if(firstWord == "math") {
         var result = strArr.match(/\((.*)\)/);
         finalAns = math.eval(result[1]);
 
@@ -31,20 +30,16 @@ $(() => {
         //  $(this).html($(this).html().replace("math", "<span class='mathCol'>math</span>"));
         //});
       }
-      else if(firstWord == "graph")
-      {
+      else if(firstWord == "graph") {
         //finalAns = "See below: ";
         //g = document.getElementById("usrOutput").createElement("div");
         //g.setAttribute("plot", "Div1");
         var eqGraph = strArr.match(/\((.*)\)/);
         draw(eqGraph[1]);
       }
-      else if(firstWord == "parse")
-      {
+      else if(firstWord == "parse") {
         finalAns = "Parsing unavailable in this version.";
-      }
-      else
-      {
+      } else {
         finalAns = stringArray[i];
       }
 
