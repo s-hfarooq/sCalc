@@ -8,4 +8,21 @@
 
 
 ## GUI
-HOW TO IMPROVE - step by step
+* Remove specifics
+  * Space/no space between command and ( shouldn't matter
+  * Remove need for specific commands? - some sort of smart detection
+* Highlight based on command
+  * Hyperlink support
+* When using ^ the text should become smaller - superscript
+* Add line numbers on user input
+* Graphs
+  * Allow more than one per instance
+  * Resize when window size changes + fix zoom in/out
+* Suggested commands
+* Themes
+  * Allow for custom background colors, highlight colors, text colors, etc.
+
+## Other
+* Add help guide within program
+* Add custom variable support
+* Commands for other subjects - physics, chemistry, etc.
