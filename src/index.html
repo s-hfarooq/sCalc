@@ -2,12 +2,16 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
   <title>sCalc</title>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="scripts/bootstrap.min.css">
   <link rel="stylesheet" href="scripts/styles.css">
+
+  <link rel="stylesheet" href="scripts/codemirror.css">
+
 
   <!-- Scripts -->
   <script>
@@ -24,6 +28,19 @@
   <script src="scripts/math.min.js"></script>
   <script src="scripts/plotly-1.35.2.min.js"></script>
 
+  <script src="codemirror/lib/codemirror.js"></script>
+  <link href="codemirror/lib/codemirror.css" rel="stylesheet"></link>
+  <script src="codemirror/mode/xml/xml.js"></script>
+  <script src="codemirror/addon/edit/closetag.js"></script>
+  <link href="codemirror/theme/dracula.css" rel="stylesheet"></link>
+
+  <style>
+      .CodeMirror {
+        border: 1px solid #eee;
+        height: auto;
+      }
+  </style>
+
 </head>
 
 
@@ -34,16 +51,22 @@
   <div class="split left">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
       <h3 class="hash-heading">Input</h3>
-      <div id="text-input" contenteditable="true" class="form-control text-input" placeholder="Enter text and see the results..."></div>
 
-      <!-- Script handling auto resize of input box -->
+      <textarea id="text-input"><p>A paragraph</p></textarea>
+
       <script>
-        var textarea = document.getElementById("text-input");
+        const editor = CodeMirror.fromTextArea(document.getElementById('text-input'), {
+          mode: "xml",
+          lineNumbers: true,
+          viewportMargin: Infinity,
+          autoCloseTags: true
+        });
 
-        textarea.oninput = function() {
-          textarea.style.height = "";
-          textarea.style.height = Math.min(textarea.scrollHeight) + "px";
-        };
+        editor.on('change', (editor) => {
+          const text = editor.doc.getValue()
+          test(text);
+          console.log(text);
+        });
       </script>
     </div>
   </div>
@@ -52,12 +75,13 @@
   <div class="split right">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <h3 class="hash-heading">Output</h3>
-      <div id="usrOutput" class="hash-output"></div>
+      <pre id="usrOutput" class="hash-output"> </pre>
       <div id="plot"></div>
     </div>
   </div>
 
 </div>
+
 </body>
 
 </html>
