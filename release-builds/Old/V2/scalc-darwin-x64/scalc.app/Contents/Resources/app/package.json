@@ -1,0 +1,15 @@
+{
+  "name": "scalc",
+  "version": "1.0.0",
+  "description": "See the results of your input (still doesn't work though)",
+  "repository": "electron/simple-samples",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron app.js"
+  },
+  "author": "Hassan Farooq, Github: s-hfarooq, email: 1hassanfarooq@gmail.com, 2018",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.8.8"
+  }
+}

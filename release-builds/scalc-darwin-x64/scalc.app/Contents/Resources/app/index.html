@@ -1,63 +1,97 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <title>sCalc</title>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>sCalc</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="scripts/bootstrap.min.css">
-  <link rel="stylesheet" href="scripts/styles.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="scripts/bootstrap.min.css">
+    <link rel="stylesheet" href="scripts/styles.css">
 
-  <!-- Scripts -->
-  <script>
-    delete module.exports
-  </script>
-  <script src="scripts/jquery-3.2.1.js"></script>
-  <script src="scripts/math.js"></script>
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-
-  <script src="scripts/graph.js"></script>
-  <script src="window.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="scripts/codemirror.css">
 
 
-  <script src="scripts/math.min.js"></script>
-  <script src="scripts/plotly-1.35.2.min.js"></script>
+    <!-- Scripts -->
+    <script>
+      delete module.exports
+    </script>
+    <script src="scripts/jquery-3.2.1.js"></script>
+    <script src="scripts/math.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 
-</head>
+    <script src="window.js" charset="utf-8"></script>
+
+    <script src="scripts/math.min.js"></script>
+    <script src="scripts/plotly-1.35.2.min.js"></script>
+
+    <script src="codemirror/lib/codemirror.js"></script>
+    <link href="codemirror/lib/codemirror.css" rel="stylesheet"></link>
+    <script src="codemirror/mode/sCalcMode/simplemode.js"></script>
+
+    <script src="codemirror/addon/edit/closetag.js"></script>
+    <link href="codemirror/theme/dracula.css" rel="stylesheet"></link>
+
+    <!-- font -->
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+
+    <style>
+      .CodeMirror {
+        border: 1px solid #eee;
+        height: auto;
+      }
+    </style>
+
+  </head>
 
 
-<body>
-  <div id="container" class="container-fluid">
+  <body>
+    <div id="container" class="container-fluid">
 
-  <!-- Input row -->
-  <div class="split left">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-      <h3 class="hash-heading">Input</h3>
-      <div id="text-input" contenteditable="true" class="form-control text-input" placeholder="Enter text and see the results..."></div>
+      <!-- Input row -->
+      <div class="split left">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+          <h3 class="hash-heading">Input</h3>
 
-      <!-- Script handling auto resize of input box -->
-      <script>
-        var textarea = document.getElementById("text-input");
+          <textarea id="text-input"></textarea>
 
-        textarea.oninput = function() {
-          textarea.style.height = "";
-          textarea.style.height = Math.min(textarea.scrollHeight) + "px";
-        };
-      </script>
+          <script>
+          const editor = CodeMirror.fromTextArea(document.getElementById('text-input'), {
+            //mode: "text/x-java",
+            mode: "sCalcMode/simplemode",
+            lineNumbers: true,
+            lineWrapping: true,
+            undoDepth: 50,
+            cursorHeight: 0.85,
+            maxHighlightLength: 2500,
+            autoCloseTags: true
+          });
+
+          editor.on('change', (editor) => {
+            const text = editor.doc.getValue()
+            test(text);
+            console.log(text);
+          });
+          </script>
+        </div>
+      </div>
+
+      <!-- Output row -->
+      <div class="split right">
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h3 class="hash-heading">Output</h3>
+          <pre id="usrOutput" class="hash-output"> </pre>
+          <div id="plot"></div>
+        </div>
+
+        <!-- Help page -->
+        <form action="help.html">
+          <input type="submit" value="Help" class="backButton" style="float: right;"/>
+        </form>
+      </div>
     </div>
-  </div>
-
-  <!-- Output row -->
-  <div class="split right">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <h3 class="hash-heading">Output</h3>
-      <div id="usrOutput" class="hash-output"></div>
-      <div id="plot"></div>
-    </div>
-  </div>
-
-</div>
-</body>
+  </body>
 
 </html>

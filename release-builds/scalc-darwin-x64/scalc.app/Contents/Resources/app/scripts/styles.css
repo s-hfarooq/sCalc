@@ -66,14 +66,41 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-.mathCol{
+.mathCol {
     color: red;
 }
 
-.graphCol{
+.graphCol {
   color: blue;
 }
 
-.parseCol{
+.parseCol {
   color: green;
+}
+
+.CodeMirror {
+  font-family: 'Actor';
+  font-size: 16px;
+}
+
+.backButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #5c5c5c;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #5c5c5c;
+	box-shadow:inset 0px 1px 0px 0px #5c5c5c;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5c5c5c), color-stop(1, #5c5c5c));
+	background:-moz-linear-gradient(top, #5c5c5c 5%, #5c5c5c 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5c5c5c', endColorstr='#5c5c5c',GradientType=0);
+	background-color:#5c5c5c;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #5c5c5c;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: 'Actor';
+	font-size:10px;
+	font-weight:bold;
+	padding:4px 12px;
+	text-decoration:none;
 }

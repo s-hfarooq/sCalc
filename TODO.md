@@ -13,6 +13,11 @@
   * Remove need for specific commands? - some sort of smart detection
 * Highlight based on command
   * Hyperlink support
+* Fix help page
+  * Add info
+  * Fix button on main page + new page
+  * Fix animation
+  * Save input when going to help/back
 * When using ^ the text should become smaller - superscript
 * Add line numbers on user input
 * Graphs
@@ -23,6 +28,5 @@
   * Allow for custom background colors, highlight colors, text colors, etc.
 
 ## Other
-* Add help guide within program
 * Add custom variable support
 * Commands for other subjects - physics, chemistry, etc.
