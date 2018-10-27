@@ -19,7 +19,7 @@ app.once('ready', () => {
     show: false
   })
 
-  //Comment this line out if menubar needed - also disables certain key shortcuts
+  //Comment below line out if menubar needed - also disables certain key shortcuts
   //window.setMenu(null);
 
   // Load a URL in the window to the local index.html path
@@ -33,5 +33,4 @@ app.once('ready', () => {
   window.once('ready-to-show', () => {
     window.show()
   })
-
 })

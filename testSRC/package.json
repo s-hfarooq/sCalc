@@ -1,7 +1,7 @@
 {
   "name": "scalc",
-  "version": "1.0.0",
-  "description": "See the results of your input (still doesn't work though)",
+  "version": "0.0.9",
+  "description": "See the results of your input",
   "repository": "electron/simple-samples",
   "main": "app.js",
   "scripts": {
