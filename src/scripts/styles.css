@@ -66,14 +66,19 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-.mathCol{
+.mathCol {
     color: red;
 }
 
-.graphCol{
+.graphCol {
   color: blue;
 }
 
-.parseCol{
+.parseCol {
   color: green;
+}
+
+.CodeMirror {
+  font-family: 'Actor';
+  font-size: 16px;
 }
