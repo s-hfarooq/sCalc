@@ -41,7 +41,7 @@ Errors also appear if closing parenthesis appears before finishing equation (ie.
 
 ## Preview
 
-<img src="screenshots/screenshot-V6.png" alt="screenshot" height="450"><br>
+<img src="screenshots/screenshot-V7.png" alt="screenshot" height="450"><br>
 
 
 Currently very basic - needs a lot of work
