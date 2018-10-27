@@ -23,9 +23,9 @@ Commands must be entered by in the following fashion: `keyword (command)` where 
 If the program doesn't understand a command, it mirrors whatever you've typed.
 
 #### Math command
-'Example: math (5*5)`
+`Example: math (5*5)`
 
-Allows for input of basic arithmetic (ie. +, -, *, /, etc.), unit conversion (ie. 16kg to lbs), and allows the use of constants (ie. pi, e, etc.).
+Allows for input of basic arithmetic (ie. +, -, *, /, etc.), unit conversion (ie. 16kg to lbs), and allows the use of constants (ie. π, e, etc.).
 
 #### Parse command
 `Example: parse(a=10)`
@@ -43,14 +43,8 @@ Errors also appear if closing parenthesis appears before finishing equation (ie.
 
 <img src="screenshots/screenshot-V7.png" alt="screenshot" height="450"><br>
 
-
-Currently very basic - needs a lot of work
-
-Change the css - different theme (eventually a theme selector?)
-
-
 ## Future improvements
-Take a look at `TODO.md`. It gives some details as to what's next and how it's going to be achieved.
+Take a look at `TODO.md`, it gives some details as to what's next
 
 
 ## Contact
