@@ -17,17 +17,25 @@ function test(text) {
   for(var i = 0; stringArray.length > i; i++) {
     //Finds first word of line to know what command to use
     const strArr = stringArray[i];
-    var firstWord = strArr.replace(/ .*/,'');
+
+    //Splits line into array by spaces
+    const lineWrds = strArr.split(" ");
+    var firstWord = lineWrds[0];
 
     //Preforms basic math or graphing - defaults to mirroring user input
-    if(firstWord == "math") {
-      var result = strArr.match(/\((.*)\)/);
-      finalAns = math.eval(result[1]);
-    } else if(firstWord == "graph") {
-      finalAns = "See Below:";
-      var eqGraph = strArr.match(/\((.*)\)/);
-      draw(eqGraph[1]);
-    } else if (firstWord == "parse") {
+    if(firstWord.toUpperCase() == "MATH") {
+      var result = lineWrds[1];
+      console.log("result: " + result);
+      finalAns = math.eval(result);
+    } else if(firstWord.toUpperCase() == "GRAPH") {
+      var eqGraph = lineWrds[1];
+      if(eqGraph.includes("x")) {
+        finalAns = "See Below:";
+        draw(eqGraph[1]);
+      } else {
+        finalAns = stringArray[i];
+      }
+    } else if (firstWord.toUpperCase() == "PARSE") {
       finalAns = "Parsing unavailable in this version.";
     } else {
       finalAns = stringArray[i];
