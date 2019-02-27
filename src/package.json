@@ -1,22 +1,15 @@
 {
-  "name": "electron-quick-start",
+  "name": "scalc",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
+  "description": "See the results of your input (still doesn't work though)",
+  "repository": "electron/simple-samples",
+  "main": "app.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron app.js"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Hassan Farooq, Github: s-hfarooq, email: 1hassanfarooq@gmail.com, 2018",
+  "license": "GNUGPL",
   "devDependencies": {
-    "electron": "^4.0.4"
+    "electron": "^1.8.8"
   }
 }

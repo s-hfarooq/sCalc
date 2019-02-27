@@ -1,19 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
 
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>sCalc</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="scripts/bootstrap.min.css">
+    <link rel="stylesheet" href="scripts/styles.css">
+    <link rel="stylesheet" href="scripts/codemirror.css">
+
+    <!-- Scripts -->
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+      delete module.exports
     </script>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/math.js"></script>
+
+    <script src="window.js" charset="utf-8"></script>
+
+    <script src="scripts/math.min.js"></script>
+    <script src="scripts/plotly-1.35.2.min.js"></script>
+
+    <script src="codemirror/lib/codemirror.js"></script>
+    <link href="codemirror/lib/codemirror.css" rel="stylesheet"></link>
+
+    <script src="codemirror/addon/edit/closetag.js"></script>
+    <link href="codemirror/theme/dracula.css" rel="stylesheet"></link>
+
+    <!-- font -->
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+
+    <style>
+      .CodeMirror {
+        border: 1px solid #eee;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container" class="container-fluid">
+
+      <!-- Input row -->
+      <div class="split left">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+          <h3 class="hash-heading">Input</h3>
+
+          <!-- Codemirror -->
+          <textarea id="text-input"></textarea>
+
+          <script>
+            const editor = CodeMirror.fromTextArea(document.getElementById('text-input'), {
+              mode: "text/x-java",
+              lineNumbers: true,
+              lineWrapping: true,
+              undoDepth: 50,
+              cursorHeight: 0.85,
+              maxHighlightLength: 3000,
+              autoCloseTags: true
+            });
+
+            editor.on('change', (editor) => {
+              const text = editor.doc.getValue()
+              test(text);
+              console.log(text);
+            });
+          </script>
+        </div>
+      </div>
+
+      <!-- Output row -->
+      <div class="split right">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h3 class="hash-heading">Output</h3>
+          <pre id="usrOutput" class="hash-output"> </pre>
+          <div id="plot"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
