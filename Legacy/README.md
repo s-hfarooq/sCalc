@@ -3,6 +3,7 @@
 
 ## Information
 <b> THIS DIRECTORY IS FOR OLD VERSIONS </b>
+The code was pretty bad and a lot of things weren't working properly, so I decided to start over from (mostly) scratch.
 
 A robust desktop calculator created with Electron
 
